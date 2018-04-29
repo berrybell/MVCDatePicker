@@ -3,9 +3,23 @@
 }
 
 <h2>@ViewBag.Title</h2>
+<div>
+    <form onSubmit="window.location.reload();">
+        <label>Enter date:</label>
+        <input type="text" id="datepicker" name="datepicker" />
+        <button action="/Home/SendDate" type="submit" id="ajaxsend">Submit</button>
+    </form>
+</div>
 
-<form>
-    <label>Enter date:</label>
-    <input type="text" id="datepicker" />
-    <button action="/Home/SendDate" type="submit" id="ajaxsend">Submit</button>
-</form>
+<div>
+    <p>@ViewBag.Result</p>
+</div>
+
+@section scripts {
+    <script>
+        $("#datepicker").datepicker({
+            dateFormat: "dd.mm.yy"
+        });
+    </script>
+    <script src="~/Scripts/send-date.js"></script>
+}

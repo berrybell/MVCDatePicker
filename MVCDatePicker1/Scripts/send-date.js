@@ -11,9 +11,7 @@
 
         }).done(function (data) {
             //Successfully pass to server and get response
-            if (data.result = "OK") {
-                alert("Date submitted successfully.");
-            }
+            window.location.reload();
         }).fail(function (response) {
             if (response.status != 0) {
                 alert(response.status + " " + response.statusText);
